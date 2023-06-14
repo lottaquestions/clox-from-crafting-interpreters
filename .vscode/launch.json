@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug with GDB",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/clox",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "preLaunchTask": "makeBuild"
+      },
+      {
+        "name": "Debug with LLDB",
+        "type": "lldb",
+        "request": "launch",
+        "program": "${workspaceFolder}/clox",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "reverseDebugging": true,
+        "sourceLanguages": ["c"],
+        "preLaunchTask": "makeBuild"
+      }
+    ]
+  }
+  
