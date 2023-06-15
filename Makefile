@@ -11,8 +11,12 @@ all: $(EXECUTABLE)
 $(EXECUTABLE): $(OBJ_FILES)
 	$(CC) $(CFLAGS) $^ -o $@
 
-$(OBJ_DIR)/%.o: %.c
+$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
+.PHONY: clean
 clean:
-	rm -rf $(OBJ_DIR) $(OBJ_FILES) $(EXECUTABLE)
+	rm -rf $(OBJ_DIR) $(EXECUTABLE)
