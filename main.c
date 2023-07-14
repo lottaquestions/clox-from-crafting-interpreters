@@ -13,6 +13,7 @@ int main(int argc, const char* argv[]){
     int constant = addConstant(&chunk, 1.2); // Create a constant in the chunk's constant pool and return its index within the pool(array)
     writeChunk(&chunk, OP_CONSTANT, 123);
     writeChunk(&chunk, constant, 123);
+    writeChunk(&chunk, OP_NEGATE, 123);
 
     writeChunk(&chunk, OP_RETURN, 123);
     disassembleChunk(&chunk, "test chunk");
