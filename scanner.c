@@ -38,7 +38,7 @@ static char advance(){
 }
 
 static char peek(){
-    *scanner.current;
+    return *scanner.current;
 }
 
 static char peekNext(){
